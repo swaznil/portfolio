@@ -528,26 +528,34 @@ svg {
 
 .entry-meta {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
+  align-items: center;
+  gap: 18px;
   padding: 4px 6px 26px calc(2.4rem + clamp(14px, 2.4vw, 30px));
+  flex-wrap: wrap;
 }
 
-.entry-meta span {
+.entry-meta > span:first-child {
   margin-right: auto;
 }
 
-.entry-meta a {
+.entry-meta a,
+.fake-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 0.85rem;
+  white-space: nowrap;
 }
 
-.entry-meta a svg {
+.entry-meta a svg,
+.fake-link svg {
   width: 18px;
   height: 18px;
+  flex-shrink: 0;
+}
+
+.fake-link {
+  opacity: 0.7;
 }
 
 .entry.is-draft {
